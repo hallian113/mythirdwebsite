@@ -2,36 +2,258 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Visas & Tickets | MD Travels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Visas & Aviation | MD Travels</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Specific Premium Styling for Visas Page */
+        .visa-hero {
+            background: linear-gradient(rgba(10, 45, 39, 0.85), rgba(10, 45, 39, 0.85)), 
+                        url('https://images.unsplash.com/photo-1544016768-982d1554f0b9?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 10%;
+            text-align: center;
+            color: var(--gold);
+        }
+
+        .service-detail-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            transition: 0.4s;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-detail-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+        }
+
+        .visa-features {
+            list-style: none;
+            margin: 20px 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        .visa-features li {
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .visa-features li i {
+            color: var(--gold);
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        .process-section {
+            background: var(--primary);
+            color: white;
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            position: relative;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: rgba(212, 175, 55, 0.2);
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cta-banner {
+            padding: 80px 10%;
+            text-align: center;
+            background: var(--gold);
+            color: var(--primary);
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="logo">MD Travels</div>
-        <nav><ul><li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="visas.html">Visas</a></li>
-            <li><a href="contact.html">Contact</a></li></ul></nav>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="visas.html">Visas</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section>
-        <h2 class="section-title">Our Services</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Work & Business Visas</h3>
-                <p>Full documentation support for corporate travelers.</p>
-            </div>
-            <div class="card">
-                <h3>Tourist E-Visas</h3>
-                <p>Quick 48-hour processing for leisure trips.</p>
-            </div>
-            <div class="card">
-                <h3>Flight Booking</h3>
-                <p>Best price guarantee on International & Domestic flights.</p>
-            </div>
-        </div>
+    <section class="visa-hero">
+        <h1 style="font-size: 3.5rem; text-transform: uppercase; letter-spacing: 5px;">Visa & Travel Solutions</h1>
+        <p style="color: white; letter-spacing: 2px; font-weight: 300;">Seamless Global Access & Premium Aviation Bookings</p>
     </section>
 
-    <footer>&copy; 2026 MD Travels.</footer>
+    <section style="background: #fdfdfd; padding: 100px 10%;">
+    <div style="text-align: center; margin-bottom: 60px;">
+        <span style="color: var(--gold); text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem; font-weight: 600;">Elite Aviation</span>
+        <h2 style="color: var(--primary); font-size: 3rem; margin-top: 10px;">Travel Reimagined</h2>
+    </div>
+
+    <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        
+        <div class="card" style="padding: 40px; border: 1px solid rgba(212, 175, 55, 0.2); position: relative; overflow: hidden;">
+            <div style="position: absolute; right: -20px; top: -20px; font-size: 8rem; color: rgba(10, 45, 39, 0.03); transform: rotate(-15deg);">
+                <i class="fas fa-plane"></i>
+            </div>
+            <i class="fas fa-plane-departure" style="font-size: 2.5rem; color: var(--gold); margin-bottom: 25px;"></i>
+            <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 15px;">Aviation Management</h3>
+            <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">
+                Access to a global fleet of commercial first-class cabins and private aviation partners. We optimize your routes for time and comfort.
+            </p>
+            <ul style="list-style: none; padding: 0; color: #555; font-size: 0.9rem;">
+                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--gold); margin-right: 10px;"></i> Preferred Seat Selection</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--gold); margin-right: 10px;"></i> VIP Chauffeur Transfers</li>
+                <li><i class="fas fa-check" style="color: var(--gold); margin-right: 10px;"></i> Excess Baggage Handling</li>
+            </ul>
+        </div>
+
+        <div class="card" style="padding: 40px; background: var(--primary); color: white; border: none;">
+            <i class="fas fa-passport" style="font-size: 2.5rem; color: var(--gold); margin-bottom: 25px;"></i>
+            <h3 style="color: var(--gold); font-size: 1.5rem; margin-bottom: 15px;">Visa Concierge</h3>
+            <p style="color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 20px;">
+                Our specialized team handles complex documentation, embassy liaison, and priority filings so you never miss a deadline.
+            </p>
+            <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.9); font-size: 0.9rem;">
+                <li style="margin-bottom: 10px;"><i class="fas fa-star" style="color: var(--gold); margin-right: 10px;"></i> 100% Document Verification</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-star" style="color: var(--gold); margin-right: 10px;"></i> Priority Embassy Slots</li>
+                <li><i class="fas fa-star" style="color: var(--gold); margin-right: 10px;"></i> K-ETA & E-Visa Experts</li>
+            </ul>
+        </div>
+
+        <div class="card" style="padding: 40px; border: 1px solid rgba(212, 175, 55, 0.2);">
+            <i class="fas fa-shield-alt" style="font-size: 2.5rem; color: var(--gold); margin-bottom: 25px;"></i>
+            <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 15px;">Elite Logistics</h3>
+            <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">
+                Beyond tickets, we manage your entire footprint. From airport meet-and-greet to secure local transportation.
+            </p>
+            <ul style="list-style: none; padding: 0; color: #555; font-size: 0.9rem;">
+                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--gold); margin-right: 10px;"></i> 24/7 Travel Assistance</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--gold); margin-right: 10px;"></i> Corporate Rate Negotiations</li>
+                <li><i class="fas fa-check" style="color: var(--gold); margin-right: 10px;"></i> Real-time Flight Monitoring</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+    <section style="background: var(--primary); color: white; padding: 120px 10%; position: relative; overflow: hidden;">
+    
+    <div style="position: absolute; top: 10%; left: 50%; transform: translateX(-50%); font-size: 10rem; font-weight: 900; color: rgba(255,255,255,0.02); white-space: nowrap; pointer-events: none; text-transform: uppercase;">
+        MD Experience
+    </div>
+
+    <div style="text-align: center; margin-bottom: 80px; position: relative; z-index: 2;">
+        <span style="color: var(--gold); text-transform: uppercase; letter-spacing: 5px; font-size: 0.9rem;">The Bespoke Process</span>
+        <h2 style="font-size: 3.5rem; margin-top: 15px; font-weight: 300;">Your Path to <span style="color: var(--gold); font-weight: 600;">Global Freedom</span></h2>
+    </div>
+
+    <div class="process-container" style="display: flex; justify-content: space-between; gap: 20px; position: relative; flex-wrap: wrap;">
+        
+        <div style="position: absolute; top: 40px; left: 10%; right: 10%; height: 1px; background: rgba(212, 175, 55, 0.3); z-index: 1;"></div>
+
+        <div style="flex: 1; min-width: 200px; text-align: center; position: relative; z-index: 2;">
+            <div style="width: 80px; height: 80px; background: var(--primary); border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; transition: 0.4s;">
+                <i class="fas fa-comment-alt" style="color: var(--gold); font-size: 1.5rem;"></i>
+            </div>
+            <h4 style="color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">01. Private Consultation</h4>
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.6;">
+                A dedicated advisor assesses your global travel history to craft a foolproof application strategy.
+            </p>
+        </div>
+
+        <div style="flex: 1; min-width: 200px; text-align: center; position: relative; z-index: 2;">
+            <div style="width: 80px; height: 80px; background: var(--primary); border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px;">
+                <i class="fas fa-file-signature" style="color: var(--gold); font-size: 1.5rem;"></i>
+            </div>
+            <h4 style="color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">02. Elite Documentation</h4>
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.6;">
+                Our compliance team meticulously verifies every document to ensure a 100% success rate.
+            </p>
+        </div>
+
+        <div style="flex: 1; min-width: 200px; text-align: center; position: relative; z-index: 2;">
+            <div style="width: 80px; height: 80px; background: var(--primary); border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px;">
+                <i class="fas fa-paper-plane" style="color: var(--gold); font-size: 1.5rem;"></i>
+            </div>
+            <h4 style="color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">03. Priority Lodgment</h4>
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.6;">
+                Direct filing through our partner channels for rapid processing and priority embassy slots.
+            </p>
+        </div>
+
+        <div style="flex: 1; min-width: 200px; text-align: center; position: relative; z-index: 2;">
+            <div style="width: 80px; height: 80px; background: var(--gold); border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);">
+                <i class="fas fa-check-circle" style="color: var(--primary); font-size: 1.8rem;"></i>
+            </div>
+            <h4 style="color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">04. Secure Delivery</h4>
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.6;">
+                Your travel credentials delivered securely, allowing you to focus on the journey ahead.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+    <section style="background: linear-gradient(rgba(10, 45, 39, 0.9), rgba(10, 45, 39, 0.9)), 
+                url('https://images.unsplash.com/photo-1534001265532-393289eb8ed3?auto=format&fit=crop&q=80'); 
+                background-size: cover; background-position: center; padding: 120px 10%; text-align: center; position: relative;">
+    
+    <div style="border: 1px solid var(--gold); padding: 60px 40px; max-width: 900px; margin: 0 auto; position: relative;">
+        
+        <div style="position: absolute; top: -10px; left: -10px; background: var(--primary); padding: 0 15px;">
+            <i class="fas fa-crown" style="color: var(--gold); font-size: 1.2rem;"></i>
+        </div>
+
+        <span style="color: var(--gold); text-transform: uppercase; letter-spacing: 6px; font-size: 0.8rem; display: block; margin-bottom: 20px;">Limited Appointments Available</span>
+        
+        <h2 style="color: white; font-size: 3rem; font-weight: 300; line-height: 1.2; margin-bottom: 30px;">
+            Experience Travel Without <span style="color: var(--gold); font-style: italic;">Boundaries</span>
+        </h2>
+        
+        <p style="color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 600px; margin: 0 auto 40px; line-height: 1.8;">
+            Your global journey begins with a single conversation. Connect with our senior consultants to secure your priority travel credentials today.
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="contact.html" class="btn" style="background: var(--gold); color: var(--primary); padding: 18px 45px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border: none; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); transition: 0.3s;">
+                Request a Consultation
+            </a>
+            <a href="tel:+123456789" style="background: transparent; color: white; border: 1px solid rgba(255,255,255,0.3); padding: 18px 45px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;" onmouseover="this.style.borderColor='var(--gold)'; this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)'; this.style.color='white'">
+                Direct Concierge Line
+            </a>
+        </div>
+    </div>
+</section>
+    <footer style="background: var(--primary); color: white; padding: 40px 10%; text-align: center;">
+        <p>&copy; 2026 MD Travels | Bespoke Luxury & Aviation Management</p>
+    </footer>
 </body>
 </html>

@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact MD Travels | Bespoke Service</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <header>
@@ -31,15 +33,16 @@
         <form id="multiStepForm" style="max-width: 700px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 15px; box-shadow: var(--shadow);">
             
             <div class="form-step form-step-active">
-                <h3 style="margin-bottom: 20px; color: var(--primary);">What can we help you with?</h3>
+                <h3 style="margin-bottom: 10px; color: var(--primary);">What can we help you with?</h3>
+                <p style="color: #666; margin-bottom: 20px;">Select the service you're interested in.</p>
                 <div class="service-grid">
                     <div class="option-card" onclick="selectOpt(this)">
-                        <h4>Visa Processing</h4>
-                        <p>K-ETA, Business, & Tourist</p>
+                        <h4 style="color: var(--primary);">Visa Processing</h4>
+                        <p style="font-size: 0.8rem; color: #777;">K-ETA, Business, & Tourist</p>
                     </div>
                     <div class="option-card" onclick="selectOpt(this)">
-                        <h4>Flight Tickets</h4>
-                        <p>Premium & Business Class</p>
+                        <h4 style="color: var(--primary);">Flight Tickets</h4>
+                        <p style="font-size: 0.8rem; color: #777;">Premium & Business Class</p>
                     </div>
                 </div>
                 <div class="btn-group">
@@ -49,9 +52,10 @@
             </div>
 
             <div class="form-step">
-                <h3 style="margin-bottom: 20px; color: var(--primary);">Travel Details</h3>
+                <h3 style="margin-bottom: 10px; color: var(--primary);">Travel Details</h3>
+                <p style="color: #666; margin-bottom: 20px;">Provide your travel preferences.</p>
                 <input type="text" placeholder="Destination City">
-                <input type="date" placeholder="Departure Date">
+                <input type="date">
                 <textarea rows="4" placeholder="Special Requests (e.g., VIP Airport Pickup)"></textarea>
                 <div class="btn-group">
                     <button type="button" class="btn btn-outline prev-step">Back</button>
@@ -60,7 +64,8 @@
             </div>
 
             <div class="form-step">
-                <h3 style="margin-bottom: 20px; color: var(--primary);">Secure Your Booking</h3>
+                <h3 style="margin-bottom: 10px; color: var(--primary);">Secure Your Booking</h3>
+                <p style="color: #666; margin-bottom: 20px;">Last step! Just your contact details.</p>
                 <input type="text" placeholder="Full Name" required>
                 <input type="email" placeholder="Email Address" required>
                 <input type="tel" placeholder="Phone Number">
@@ -72,6 +77,10 @@
         </form>
     </section>
 
+    <footer>
+        <p>&copy; 2026 MD Travels | Bespoke Luxury Service</p>
+    </footer>
+
     <script>
         const nextBtns = document.querySelectorAll(".next-step");
         const prevBtns = document.querySelectorAll(".prev-step");
@@ -81,15 +90,19 @@
 
         nextBtns.forEach(btn => {
             btn.addEventListener("click", () => {
-                activeStep++;
-                updateForm();
+                if(activeStep < steps.length - 1) {
+                    activeStep++;
+                    updateForm();
+                }
             });
         });
 
         prevBtns.forEach(btn => {
             btn.addEventListener("click", () => {
-                activeStep--;
-                updateForm();
+                if(activeStep > 0) {
+                    activeStep--;
+                    updateForm();
+                }
             });
         });
 
