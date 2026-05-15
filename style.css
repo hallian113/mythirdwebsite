@@ -1,4 +1,6 @@
-/* Custom Properties for Premium Feel */
+/* ==========================================================================
+   1. CUSTOM PROPERTIES & GLOBAL RESETS
+   ========================================================================== */
 :root {
     --primary: #0a2d27; /* Deep Emerald */
     --gold: #d4af37;
@@ -20,7 +22,88 @@ body {
     overflow-x: hidden;
 }
 
-/* Header & Nav */
+/* ==========================================================================
+   2. UI ELEMENTS & UTILITIES
+   ========================================================================== */
+.btn {
+    background: var(--gold);
+    color: var(--primary);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+    border-radius: 4px;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+}
+
+.btn:hover { 
+    background: #c29e2f; 
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.btn-mini {
+    background: var(--gold);
+    color: var(--primary);
+    padding: 8px 18px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-radius: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+.btn-mini:hover {
+    background: #ffffff;
+    color: var(--primary);
+}
+
+.btn-text {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.btn-text:hover {
+    color: var(--gold);
+}
+
+.btn-text i {
+    transition: transform 0.3s;
+}
+
+.btn-text:hover i {
+    transform: translateX(5px);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.left-align {
+    text-align: left !important;
+}
+
+/* ==========================================================================
+   3. HEADER & NAVIGATION
+   ========================================================================== */
 header {
     background: var(--primary);
     padding: 20px 10%;
@@ -55,7 +138,9 @@ nav ul li a {
 
 nav ul li a:hover { color: var(--gold); }
 
-/* Hero Section with Animated Slideshow */
+/* ==========================================================================
+   4. HERO & ANIMATED SLIDESHOW
+   ========================================================================== */
 .hero {
     position: relative;
     height: 80vh;
@@ -124,7 +209,9 @@ nav ul li a:hover { color: var(--gold); }
     100% { opacity: 0; }
 }
 
-/* Sections & Grid Layout */
+/* ==========================================================================
+   5. SECTIONS & GENERAL LAYOUTS
+   ========================================================================== */
 section { padding: 80px 10%; }
 
 .section-title {
@@ -140,7 +227,9 @@ section { padding: 80px 10%; }
     gap: 30px;
 }
 
-/* Airline Slider */
+/* ==========================================================================
+   6. AIRLINE SLIDER (INFINITE LOOP)
+   ========================================================================== */
 .airline-slider {
     padding: 60px 0;
     background: #fff;
@@ -185,7 +274,9 @@ section { padding: 80px 10%; }
     100% { transform: translateX(-50%); }
 }
 
-/* Premium Features / "Why Choose Us" Section */
+/* ==========================================================================
+   9. PREMIUM FEATURES / WHY CHOOSE US
+   ========================================================================== */
 .features {
     background-color: #fafafa;
 }
@@ -249,32 +340,105 @@ section { padding: 80px 10%; }
     font-size: 0.95rem;
 }
 
-/* UI Elements */
-.btn {
-    background: var(--gold);
-    color: var(--primary);
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    text-transform: uppercase;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.btn:hover { background: #b8952d; }
-
-footer {
+/* ==========================================================================
+   10. ELITE GUEST TESTIMONIALS
+   ========================================================================== */
+.testimonials {
     background: var(--primary);
-    color: white;
-    padding: 40px 10%;
-    text-align: center;
+    color: var(--white);
 }
-/* --- Contact Page Specific Styles --- */
 
+.testimonials .section-title {
+    color: var(--white);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 12px;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.quote-mark {
+    font-family: 'Poppins', sans-serif;
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.2;
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    line-height: 1;
+}
+
+.testimonial-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    font-style: italic;
+    color: #e0e0e0;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 25px;
+}
+
+.author-info h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--gold);
+}
+
+.author-info span {
+    font-size: 0.8rem;
+    color: #aaa;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   11. FLOATING CALL-TO-ACTION CONCIERGE BAR
+   ========================================================================== */
+.floating-cta {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(10, 45, 39, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(214, 175, 55, 0.3);
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 2000;
+    animation: slideUpFloat 1s ease;
+}
+
+.floating-cta p {
+    color: var(--white);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+@keyframes slideUpFloat {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ==========================================================================
+   12. CONTACT PAGE SPECIFIC FORM LAYOUTS
+   ========================================================================== */
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr 1.5fr; /* Info left par, Form right par */
+    grid-template-columns: 1fr 1.5fr; /* Info left part, Form right part */
     gap: 50px;
     background: var(--white);
     padding: 40px;
@@ -304,108 +468,182 @@ footer {
     margin-right: 20px;
 }
 
- /* Multi-step Form Specific logic based on your premium CSS */
-        .form-step {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
+/* Multi-step Form Specific logic based on your premium CSS */
+.form-step {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
 
-        .form-step-active {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+.form-step-active {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-        /* Progress Bar Styling */
-        .progress-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            gap: 20px;
-        }
+/* Progress Bar Styling */
+.progress-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 20px;
+}
 
-        .step-circle {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
-            transition: 0.4s;
-        }
+.step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    transition: 0.4s;
+}
 
-        .step-circle.active {
-            background: var(--gold);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-        }
+.step-circle.active {
+    background: var(--gold);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
 
-        /* Service Cards styling */
-        .service-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
+/* Service Cards styling */
+.service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
 
-        .option-card {
-            background: #fdfdfd;
-            border: 2px solid #eee;
-            padding: 20px;
-            border-radius: 12px;
-            cursor: pointer;
-            text-align: center;
-            transition: 0.3s;
-        }
+.option-card {
+    background: #fdfdfd;
+    border: 2px solid #eee;
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+}
 
-        .option-card:hover {
-            border-color: var(--gold);
-        }
+.option-card:hover {
+    border-color: var(--gold);
+}
 
-        .option-card.selected {
-            border-color: var(--gold);
-            background: rgba(212, 175, 55, 0.05);
-            box-shadow: var(--shadow);
-        }
+.option-card.selected {
+    border-color: var(--gold);
+    background: rgba(212, 175, 55, 0.05);
+    box-shadow: var(--shadow);
+}
 
-        /* Input styling matching your CSS theme */
-        input, textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            transition: 0.3s;
-        }
+/* Input styling matching your CSS theme */
+input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: 0.3s;
+}
 
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--gold);
-            box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
-        }
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+}
 
-        .btn-group {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-            gap: 15px;
-        }
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 15px;
+}
 
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--gold);
-            color: var(--primary);
-        }
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--primary);
+}
 
-        .btn-outline:hover {
-            background: #f4f4f4;
-        }
-    
+.btn-outline:hover {
+    background: #f4f4f4;
+}
+
+/* ==========================================================================
+   13. FOOTER
+   ========================================================================== */
+footer {
+    background: var(--primary);
+    color: white;
+    padding: 40px 10%;
+    text-align: center;
+}
+
+/* ==========================================================================
+   14. RESPONSIVE DESIGN ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 992px) {
+    .teaser-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .teaser-visual {
+        height: 350px;
+    }
+    .floating-cta {
+        display: none; /* Soft hide on tablet/mobile views for pristine layout spacing */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav ul li {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    section {
+        padding: 50px 5%;
+    }
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+}
+/* In your JS, you'd track mousemove to update top/left */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.gold-text {
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}

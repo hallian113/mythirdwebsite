@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | MD Travels | Luxury Reimagined</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Premium Enhancements */
@@ -112,34 +112,72 @@
             margin-bottom: 25px;
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            padding: 80px 10%;
-            background: var(--white);
-        }
+       /* ==========================================================================
+   FLOATING GALLERY ANIMATION
+   ========================================================================== */
+.gallery-section {
+    padding: 80px 0; /* Full width for the scroll */
+    overflow: hidden;
+    background: var(--white);
+}
 
-        .gallery-grid img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 8px;
-            filter: grayscale(20%);
-            transition: 0.5s;
-        }
+.floating-gallery {
+    width: 100%;
+    display: flex;
+    padding: 20px 0;
+}
 
-        .gallery-grid img:hover {
-            filter: grayscale(0%);
-            transform: scale(1.03);
-        }
+.gallery-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: galleryScroll 40s linear infinite; /* Slower than the airline slider */
+}
 
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .visual-split { grid-template-columns: 1fr; text-align: center; }
-            .brand-pillars { grid-template-columns: 1fr; }
-            .gallery-grid { grid-template-columns: 1fr 1fr; }
-        }
+.gallery-track img {
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    filter: grayscale(30%);
+    transition: 0.5s ease;
+    /* Adding a subtle vertical float to each image */
+    animation: floatingEffect 4s ease-in-out infinite;
+}
+
+/* Offset the floating animation for every other image for a natural look */
+.gallery-track img:nth-child(even) {
+    animation-delay: 2s;
+}
+
+.gallery-track img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Keyframes for Horizontal Movement */
+@keyframes galleryScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Keyframes for Subtle Vertical Floating */
+@keyframes floatingEffect {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Responsive speed adjustment */
+@media (max-width: 768px) {
+    .gallery-track img {
+        width: 280px;
+        height: 200px;
+    }
+    .gallery-track {
+        animation-duration: 25s;
+    }
+}
     </style>
 </head>
 <body>
@@ -220,19 +258,26 @@
         </div>
     </section>
 
-    <section style="background: var(--white);">
-        <h2 class="section-title" style="padding-top: 80px;">Excellence in Motion</h2>
-        <div class="gallery-grid">
+    <section class="gallery-section">
+    <h2 class="section-title">Excellence in Motion</h2>
+    <div class="floating-gallery">
+        <div class="gallery-track">
+            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?auto=format&fit=crop&q=80" alt="Modern Jet">
+            <img src="https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?auto=format&fit=crop&q=80" alt="Sky View">
+            <img src="https://images.unsplash.com/photo-1504600770371-58ba475c9045?auto=format&fit=crop&q=80" alt="Luxury Flight">
+            <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&fit=crop&q=80" alt="First Class Cabin">
             <img src="https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?auto=format&fit=crop&q=80" alt="Modern Jet">
             <img src="https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?auto=format&fit=crop&q=80" alt="Sky View">
             <img src="https://images.unsplash.com/photo-1504600770371-58ba475c9045?auto=format&fit=crop&q=80" alt="Luxury Flight">
             <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&fit=crop&q=80" alt="First Class Cabin">
         </div>
-    </section>
+    </div>
+</section>
 
     <footer style="background: var(--primary); color: white; padding: 60px 10%; text-align: center;">
         <div class="logo" style="margin-bottom: 20px;">MD Travels</div>
         <p style="opacity: 0.7; font-weight: 300;">&copy; 2026 MD Travels | Bespoke Luxury & Aviation Management</p>
     </footer>
+    <div class="custom-cursor"></div>
 </body>
 </html>
