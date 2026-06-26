@@ -5,9 +5,183 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MD Travels | Premium Korean Gateway</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-    <!-- Font Awesome Link added for your existing card icons & new icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== CLIENT GALLERY SECTION ===== */
+        .client-gallery {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #0f0f1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .client-gallery::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(255,215,0,0.03) 0%, transparent 70%);
+            animation: rotateGlow 30s linear infinite;
+        }
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .client-gallery .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #ffd700;
+            text-align: center;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 2;
+        }
+        .client-gallery .section-sub {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            font-size: 16px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        .client-gallery .section-sub i {
+            color: #ffd700;
+            margin: 0 8px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,215,0,0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            aspect-ratio: 3/4;
+        }
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(255,215,0,0.4);
+            box-shadow: 0 20px 60px rgba(255,215,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 20px 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .gallery-item .overlay h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            color: #ffd700;
+            margin: 0 0 4px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .gallery-item .overlay p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            color: rgba(255,255,255,0.8);
+            margin: 0;
+            font-weight: 300;
+        }
+
+        .gallery-item .badge-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,215,0,0.9);
+            color: #0f0f1a;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover .badge-number {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .gold-divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffd700, transparent);
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 15px;
+            }
+            .client-gallery .section-title {
+                font-size: 28px;
+            }
+            .gallery-item {
+                aspect-ratio: 3/4;
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .gallery-item .overlay h4 {
+                font-size: 11px;
+            }
+            .gallery-item .overlay p {
+                font-size: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,14 +196,13 @@
         </nav>
     </header>
 
+    <!-- ===== HERO SECTION ===== -->
     <div class="hero">
-        <!-- Premium Slideshow Background -->
         <div class="hero-slideshow">
             <div class="slide-bg" style="background-image: url('assets/seoul1.jpg');"></div>
             <div class="slide-bg" style="background-image: url('assets/seoul2.jpg');"></div>
             <div class="slide-bg" style="background-image: url('assets/seoul3.jpg');"></div>
         </div>
-        
         <div class="hero-content">
             <h1>Discover South Korea</h1>
             <p>Premium Travel Services & Seamless Journeys</p>
@@ -45,8 +218,6 @@
             <div class="slide"><img src="assets/Emirates-Logo-1999.jpg" alt="Emirates"></div>
             <div class="slide"><img src="assets/QatarAirways.png" alt="Qatar Airways"></div>
             <div class="slide"><img src="assets/Air_Canada-Logo.wine.png" alt="Singapore Airlines"></div>
-            
-            <!-- Repeating for infinite loop -->
             <div class="slide"><img src="assets/Korean-Air-Logo.png" alt="Korean Air"></div>
             <div class="slide"><img src="assets/Asiana_Airlines-Logo.wine.png" alt="Asiana Airlines"></div>
             <div class="slide"><img src="assets/Emirates-Logo-1999.jpg" alt="Emirates"></div>
@@ -55,6 +226,124 @@
         </div>
     </section>
 
+    <!-- ========================================== -->
+    <!-- ===== CLIENT GALLERY - SIRF EK BANDA ===== -->
+    <!-- ========================================== -->
+    <section class="client-gallery">
+        <p class="section-sub">
+            <i class="fas fa-crown"></i> The Face Behind Excellence <i class="fas fa-crown"></i>
+        </p>
+        <h2 class="section-title">The Man Behind MD Travels</h2>
+        <div class="gold-divider"></div>
+        <p class="section-sub" style="font-size:14px; text-transform:none; letter-spacing:0; color:rgba(255,255,255,0.5);">
+            A journey of passion, precision & premium service
+        </p>
+
+        <div class="gallery-grid">
+            <!-- ===== SAB PICTURES SIRF EK BANDAY KI - CAPTIONS CHANGE ===== -->
+            
+            <div class="gallery-item">
+                <img src="assets/mine1.jpeg" alt="Founder">
+                <div class="badge-number">01</div>
+                <div class="overlay">
+                    <h4>The Visionary</h4>
+                    <p>Founder & CEO, MD Travels</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/mine2.jpeg" alt="Founder">
+                <div class="badge-number">02</div>
+                <div class="overlay">
+                    <h4>Global Citizen</h4>
+                    <p>Exploring new horizons</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/mine3.jpeg" alt="Founder">
+                <div class="badge-number">03</div>
+                <div class="overlay">
+                    <h4>At the Helm</h4>
+                    <p>Leading with passion</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/mine4.jpeg" alt="Founder">
+                <div class="badge-number">04</div>
+                <div class="overlay">
+                    <h4>On the Podium</h4>
+                    <p>Sharing insights globally</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/mine5.jpeg" alt="Founder">
+                <div class="badge-number">05</div>
+                <div class="overlay">
+                    <h4>Wanderlust</h4>
+                    <p>Finding inspiration abroad</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/mine6.jpeg" alt="Founder">
+                <div class="badge-number">06</div>
+                <div class="overlay">
+                    <h4>The Strategy Room</h4>
+                    <p>Where ideas take flight</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/mine7.jpeg" alt="Founder">
+                <div class="badge-number">07</div>
+                <div class="overlay">
+                    <h4>Client First</h4>
+                    <p>Personal touch in every meeting</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/mine8.jpeg" alt="Founder">
+                <div class="badge-number">08</div>
+                <div class="overlay">
+                    <h4>Seoul Soul</h4>
+                    <p>Deep connection with Korea</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/mine9.jpeg" alt="Founder">
+                <div class="badge-number">09</div>
+                <div class="overlay">
+                    <h4>Excellence Recognized</h4>
+                    <p>Award-winning service</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/mine10.jpeg" alt="Founder">
+                <div class="badge-number">10</div>
+                <div class="overlay">
+                    <h4>Global Network</h4>
+                    <p>Building bridges worldwide</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/mine11.jpeg" alt="Founder">
+                <div class="badge-number">11</div>
+                <div class="overlay">
+                    <h4>Legacy in Making</h4>
+                    <p>One journey at a time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES SECTION ===== -->
     <section class="features">
         <h2 class="section-title">Why Choose Us?</h2>
         <div class="grid">
@@ -76,7 +365,7 @@
         </div>
     </section>
 
-    <!-- NEW SECTION: Elite Guest Testimonials -->
+    <!-- ===== TESTIMONIALS ===== -->
     <section class="testimonials">
         <p class="section-subtitle">Testimonials</p>
         <h2 class="section-title">The Standard of Excellence</h2>
@@ -100,7 +389,7 @@
         </div>
     </section>
 
-    <!-- NEW ELEMENT: Floating Premium Call-to-Action Bar -->
+    <!-- ===== FLOATING CTA ===== -->
     <div class="floating-cta">
         <p>Planning a unique venture?</p>
         <a href="contact.html" class="btn-mini">Speak to a Specialist</a>
